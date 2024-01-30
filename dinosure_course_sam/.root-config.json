@@ -71,7 +71,7 @@
       "individualsCellphoneAllowed": false,
       "individualsCustomIdAllowed": false,
       "individualsEmailAllowed": false,
-      "idCountry": false,
+      "idCountry": "ZAR",
       "companiesAllowed": false,
       "individualPolicyholderFields": {
         "address": {
