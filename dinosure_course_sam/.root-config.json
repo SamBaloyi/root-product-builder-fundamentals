@@ -125,7 +125,7 @@
         "collectionModules": []
       },
       "retryFailedPayments": {
-        "enabled": true,
+        "enabled": false,
         "daysBetweenRetries": 0,
         "numberOfRetries": 0
       },
