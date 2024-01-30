@@ -1,6 +1,14 @@
 [
   {
     "block": {
+      "key": "claim_within_waiting_period",
+      "type": "alert",
+      "markdown": "This claim is still within the waiting period.",
+      "color": "warning"
+    }
+  },
+  {
+    "block": {
       "key": "payout_details_heading",
       "type": "heading",
       "title": "Claim for policy {{ claim.policy.policy_number }}"
