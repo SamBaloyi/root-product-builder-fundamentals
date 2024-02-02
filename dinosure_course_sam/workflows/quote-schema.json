@@ -12,7 +12,6 @@
       }
     ]
   },
-
   {
     "key": "cover_amount",
     "type": "currency",
@@ -41,7 +40,6 @@
       }
     ]
   },
-
   {
     "key": "species",
     "type": "select",
@@ -77,7 +75,6 @@
       }
     ]
   },
-
   {
     "key": "birth_date",
     "outputPath": "birth_date",
@@ -91,7 +88,6 @@
       }
     ]
   },
-
   {
     "key": "health_checks_updated",
     "outputPath": "health_checks_updated",
