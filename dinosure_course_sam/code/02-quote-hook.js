@@ -18,14 +18,13 @@ const validateQuoteRequest = (data) => {
     Joi.object()
       .keys({
         start_date: Joi.date()
-          .iso()
           .min(moment().startOf('day').toISOString())
           .max(moment().add(60, 'days').endOf('day').toISOString())
           .required(),
         cover_amount: Joi.number()
           .integer()
-          .min(10000)
-          .max(100000)
+          .min(10000 * 100)
+          .max(100000 * 100)
           .required()
           .description(
             'Cover amount must be between R10,000 and R100,000 (in cents) inclusive.',
@@ -42,13 +41,13 @@ const validateQuoteRequest = (data) => {
             'tyrannosaurus rex',
             'stegosaurus',
             'velociraptor',
-            'diplodocus',
+            'brachiosaurus',
             'iguanodon',
           )
           .insensitive()
           .required()
           .description(
-            'Valid dinosaur species are Tyrannosaurus Rex, Stegosaurus, Velociraptor, Diplodocus, Iguanodon.',
+            'Valid dinosaur species are Tyrannosaurus Rex, Stegosaurus, Velociraptor, Brachiosaurus, Iguanodon.',
           ),
         health_checks_updated: Joi.boolean().required(),
       })
