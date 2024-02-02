@@ -7,7 +7,7 @@ const SPECIES_ADJUSTMENTS = {
   'tyrannosaurus rex': 0.81,
   stegosaurus: 1.19,
   velociraptor: 0.76,
-  diplodocus: 1.32,
+  brachiosaurus: 1.32,
   iguanodon: 1.07,
 };
 
@@ -42,7 +42,8 @@ const calculatePremium = (quoteData) => {
   // Total premium calculation
   const totalPremium = corePremium * speciesAdjustment + healthChecksAdjustment;
 
-  return Math.round(totalPremium); // Ensure the result is rounded to the nearest cent
+  return Math.round(totalPremium * 100) / 100;
+  // Ensure the result is rounded to the nearest cent
 };
 
 /**
