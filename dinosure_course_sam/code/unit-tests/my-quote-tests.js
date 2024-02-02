@@ -43,14 +43,14 @@ describe('getQuote', function () {
   });
 
   it('should calculate a premium of R1458.00 for a 20-year-old Tyrannosaurus Rex with R90,000.00 cover amount', function () {
-    calculateAndExpect(quoteDataValid, 1458);
+    calculateAndExpect(quoteDataValid, 145800);
   });
 
   it('should calculate a premium of R1368.00 for a 36-year-old Velociraptor with R50,000.00 cover amount', function () {
-    calculateAndExpect(quoteDataVelociraptor, 1368);
+    calculateAndExpect(quoteDataVelociraptor, 136800);
   });
 
   it('should calculate a premium of R1372.80 for a 16-year-old Brachiosaurus with R65,000.00 cover amount', function () {
-    calculateAndExpect(quoteDataBrachiosaurus, 1372.8);
+    calculateAndExpect(quoteDataBrachiosaurus, 137280);
   });
 });
