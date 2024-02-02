@@ -29,7 +29,7 @@ const calculatePremium = (quoteData) => {
   const age = moment().diff(moment(birth_date), 'years');
 
   // Core premium calculation
-  const corePremium = cover_amount * (0.01 * (age * 0.001));
+  const corePremium = (cover_amount * 100) * (0.01 * (age * 0.001));
 
   // Health checks adjustment
   const healthChecksAdjustment = health_checks_updated
@@ -42,7 +42,7 @@ const calculatePremium = (quoteData) => {
   // Total premium calculation
   const totalPremium = corePremium * speciesAdjustment + healthChecksAdjustment;
 
-  return Math.round(totalPremium * 100) / 100;
+  return Math.round(totalPremium);
   // Ensure the result is rounded to the nearest cent
 };
 
