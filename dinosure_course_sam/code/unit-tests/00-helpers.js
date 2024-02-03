@@ -33,6 +33,6 @@ const applicationValid = {
   ndrn: "100001"
 }
 
-const generatePolicyNumber = () => {
+generatePolicyNumber = () => {
   return '8CE463A4A6';
 };
