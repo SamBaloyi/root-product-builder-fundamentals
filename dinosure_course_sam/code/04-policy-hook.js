@@ -13,13 +13,13 @@
  */
 const getPolicy = (application, policyholder, billing_day) => {
   const policy = new Policy({
-    package_name: application.package_name,
+    policy_number: generatePolicyNumber(),
+    package_name: "DinoSure",
     sum_assured: application.sum_assured,
-    base_premium: application.base_premium,
     monthly_premium: application.monthly_premium,
+    base_premium: application.base_premium,
     start_date: moment().add(1, 'day').format(), // start tomorrow
-    end_date: moment().endOf('month').add(1, 'year').format(), // in 1 year
-    charges: application.module.charges,
+    end_date: null,
     module: {
       ...application.module,
     },
