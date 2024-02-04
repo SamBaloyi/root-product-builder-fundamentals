@@ -29,8 +29,8 @@ const validateAlterationPackageRequest = ({
         Joi.object().keys({
           cover_amount: Joi.number()
             .integer()
-            .min(10000)
-            .max(100000)
+            .min(10000 * 100)
+            .max(100000 * 100)
             .required()
             .description(
               'Cover amount must be between R10,000 and R100,000 inclusive.',
@@ -56,7 +56,7 @@ const validateAlterationPackageRequest = ({
  *     endpoint.
  * @see {@link https://docs.rootplatform.com/docs/alteration-hooks Alteration hooks}
  */
-const getAlterationPackage = ({
+const getAlteration = ({
   alteration_hook_key,
   data,
   policy,
@@ -68,7 +68,7 @@ const getAlterationPackage = ({
       const updatedPolicy = applyUpdateCoverAlteration(data, policy);
       alterationPackage = new AlterationPackage({
         input_data: data,
-        sum_assured: updatedPolicy.module.sum_assured,
+        sum_assured: updatedPolicy.sum_assured,
         monthly_premium: updatedPolicy.monthly_premium,
         change_description: 'Alteration - update cover amount',
         module: updatedPolicy.module,
