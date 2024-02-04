@@ -61,6 +61,7 @@ describe('Alteration Hook - Update Cover', function () {
       // @ts-ignore
       policy: policy,
       policyholder: undefined,
+      // @ts-ignore
       alteration_package: alterationPackage,
     });
 
@@ -99,6 +100,7 @@ describe('Alteration Hook - Update Cover', function () {
       // @ts-ignore
       policy: policy,
       policyholder: undefined,
+      // @ts-ignore
       alteration_package: alterationPackage,
     });
 

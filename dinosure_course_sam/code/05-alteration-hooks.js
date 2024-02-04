@@ -51,7 +51,7 @@ const validateAlterationPackageRequest = ({
  * @param {Record<string, any>} params.data The validated data returned by `validateAlterationPackageRequest` as `result.value`.
  * @param {PlatformPolicy} params.policy The policy to which the alteration package will be applied.
  * @param {PlatformPolicyholder} params.policyholder The policyholder linked to the policy.
- * @return {PlatformAlterationPackage} Alteration package returned by the
+ * @return {AlterationPackage} Alteration package returned by the
  *     <a href='https://docs.rootplatform.com/reference/create-an-alteration-package-1' target='_blank'>Create an alteration package</a>
  *     endpoint.
  * @see {@link https://docs.rootplatform.com/docs/alteration-hooks Alteration hooks}
