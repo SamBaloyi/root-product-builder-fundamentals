@@ -23,7 +23,7 @@ const validateAlterationPackageRequest = ({
 }) => {
   let validationResult;
   switch (alteration_hook_key) {
-    case 'update_cover_amount':
+    case 'update-cover':
       validationResult = Joi.validate(
         data,
         Joi.object().keys({
@@ -64,7 +64,7 @@ const getAlterationPackage = ({
 }) => {
   let alterationPackage;
   switch (alteration_hook_key) {
-    case 'update_cover_amount':
+    case 'update-cover':
       const updatedPolicy = applyUpdateCoverAlteration(data, policy);
       alterationPackage = new AlterationPackage({
         input_data: data,
@@ -99,7 +99,7 @@ const applyAlteration = ({
 }) => {
   let alteredPolicy;
   switch (alteration_hook_key) {
-    case 'update_cover_amount':
+    case 'update-cover':
       alteredPolicy = new AlteredPolicy({
         package_name: policy.package_name,
         sum_assured: alteration_package.sum_assured,

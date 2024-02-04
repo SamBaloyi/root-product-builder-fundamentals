@@ -1,0 +1,30 @@
+[
+  {
+    "key": "update-cover",
+    "type": "currency",
+    "label": "Cover Amount *",
+    "props": {
+      "prefix": "R"
+    },
+    "outputPath": "cover_amount",
+    "validators": [
+      {
+        "validation": {
+          "type": "required"
+        }
+      },
+      {
+        "validation": {
+          "min": 1000000,
+          "type": "greaterThanCurrency"
+        }
+      },
+      {
+        "validation": {
+          "max": 10000000,
+          "type": "lessThanCurrency"
+        }
+      }
+    ]
+  }
+]

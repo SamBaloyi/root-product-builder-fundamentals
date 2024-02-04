@@ -1,5 +1,5 @@
 describe('Alteration Hook - Update Cover', function () {
-  const alterationHookKey = 'update_cover_amount'; // Assuming the alteration hook key for updating cover is 'update_cover'
+  const alterationHookKey = 'update-cover'; // Assuming the alteration hook key for updating cover is 'update-cover'
 
   it('should pass alteration package validation for correct data', function () {
     const quote = getQuote(quoteDataValid)[0];
