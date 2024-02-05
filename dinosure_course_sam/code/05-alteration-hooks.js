@@ -108,7 +108,6 @@ const applyAlteration = ({
         module: alteration_package.module,
         end_date: moment(policy.end_date),
         start_date: moment(policy.start_date),
-        charges: policy.charges,
       });
       return alteredPolicy;
     default:

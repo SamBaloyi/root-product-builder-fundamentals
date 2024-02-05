@@ -9,7 +9,7 @@ describe('Alteration Hook - Update Cover', function () {
     const policy = getPolicy(application, undefined, undefined);
 
     const validAlterationData = {
-      cover_amount: 75000, // R75,000.00
+      cover_amount: 75000 * 100, // R75,000.00
     };
 
     const validation = validateAlterationPackageRequest({
@@ -49,7 +49,7 @@ describe('Alteration Hook - Update Cover', function () {
       cover_amount: 75000, // R75,000.00
     };
 
-    const alterationPackage = getAlterationPackage({
+    const alterationPackage = getAlteration({
       alteration_hook_key: alterationHookKey,
       data: alterationData,
       // @ts-ignore
@@ -87,7 +87,7 @@ describe('Alteration Hook - Update Cover', function () {
       cover_amount: 75000, // R75,000.00
     };
 
-    const alterationPackage = getAlterationPackage({
+    const alterationPackage = getAlteration({
       alteration_hook_key: alterationHookKey,
       data: alterationData,
       // @ts-ignore
