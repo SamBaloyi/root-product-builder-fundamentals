@@ -1,6 +1,4 @@
 describe('Alteration Hook - Update Cover', function () {
-  const alterationHookKey = 'update-cover'; // Assuming the alteration hook key for updating cover is 'update-cover'
-
   it('should pass alteration package validation for correct data', function () {
     const quote = getQuote(quoteDataValid)[0];
     // @ts-ignore
@@ -8,12 +6,8 @@ describe('Alteration Hook - Update Cover', function () {
     // @ts-ignore
     const policy = getPolicy(application, undefined, undefined);
 
-    const validAlterationData = {
-      cover_amount: 75000 * 100, // R75,000.00
-    };
-
     const validation = validateAlterationPackageRequest({
-      alteration_hook_key: alterationHookKey,
+      alteration_hook_key: coverAlterationKey,
       data: validAlterationData,
       // @ts-ignore
       policy: policy, // Provide a sample policy for testing
@@ -24,12 +18,8 @@ describe('Alteration Hook - Update Cover', function () {
   });
 
   it('should fail alteration package validation for invalid data', function () {
-    const invalidAlterationData = {
-      // Invalid data (missing required fields)
-    };
-
     const validation = validateAlterationPackageRequest({
-      alteration_hook_key: alterationHookKey,
+      alteration_hook_key: coverAlterationKey,
       data: invalidAlterationData,
       // @ts-ignore
       policy: undefined, // Provide a sample policy for testing
@@ -50,14 +40,14 @@ describe('Alteration Hook - Update Cover', function () {
     };
 
     const alterationPackage = getAlteration({
-      alteration_hook_key: alterationHookKey,
+      alteration_hook_key: coverAlterationKey,
       data: alterationData,
       // @ts-ignore
       policy: policy,
     });
 
     const alteredPolicy = applyAlteration({
-      alteration_hook_key: alterationHookKey,
+      alteration_hook_key: coverAlterationKey,
       // @ts-ignore
       policy: policy,
       policyholder: undefined,
@@ -88,7 +78,7 @@ describe('Alteration Hook - Update Cover', function () {
     };
 
     const alterationPackage = getAlteration({
-      alteration_hook_key: alterationHookKey,
+      alteration_hook_key: coverAlterationKey,
       data: alterationData,
       // @ts-ignore
       policy: policy,
@@ -96,7 +86,7 @@ describe('Alteration Hook - Update Cover', function () {
     });
 
     const alteredPolicy = applyAlteration({
-      alteration_hook_key: alterationHookKey,
+      alteration_hook_key: coverAlterationKey,
       // @ts-ignore
       policy: policy,
       policyholder: undefined,
@@ -114,6 +104,5 @@ describe('Alteration Hook - Update Cover', function () {
     expect(alteredPolicy.module.cover_amount).to.equal(
       alterationPackage.module.cover_amount,
     );
-
   });
 });
