@@ -19,12 +19,13 @@ const applyAnnualIncrease = ({ policy, policyholder }) => {
     today.month() === 0
   ) {
     const increasedCover = policy.sum_assured + 10000 * 100; // adds R10,000 to the current cover
+    policy.module.cover_amount = increasedCover;
     const policyWithUpdates = {
       ...policy,
       sum_assured: increasedCover,
     };
 
-    const newPremium = calculatePremium(policyWithUpdates);
+    const newPremium = calculatePremium(policyWithUpdates.module);
     return [
       {
         name: 'update_policy',
