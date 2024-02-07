@@ -15,7 +15,10 @@ describe('Schedule Functions', () => {
 
       const originalDateNow = Date.now;
       // 1st of January, current year
-      Date.now = () => new Date().setFullYear(currentYear, 0, 1);
+      const januaryFirstDate = moment()
+        .set({ year: currentYear, month: 0, date: 1 })
+        .valueOf(); // January 1st
+      Date.now = () => januaryFirstDate;
 
       // @ts-ignore
       const result = applyAnnualIncrease({ policy: policyOlderThanYear });
@@ -43,11 +46,11 @@ describe('Schedule Functions', () => {
 
       // These are random dates that aren't January 1st
       const nonJanuaryFirstDates = [
-        new Date().setFullYear(currentYear, 1, 1), // February 1st
-        new Date().setFullYear(currentYear, 0, 2), // January 2nd
-        new Date().setFullYear(currentYear, 11, 31), // December 31st
-        new Date().setFullYear(currentYear, 6, 1), // July 1st
-        new Date().setFullYear(currentYear, 11, 1), // December 1st
+        moment().set({ year: currentYear, month: 1, date: 1 }).valueOf(), // February 1st
+        moment().set({ year: currentYear, month: 0, date: 2 }).valueOf(), // January 2nd
+        moment().set({ year: currentYear, month: 11, date: 31 }).valueOf(), // December 31st
+        moment().set({ year: currentYear, month: 6, date: 1 }).valueOf(), // July 1st
+        moment().set({ year: currentYear, month: 11, date: 1 }).valueOf(), // December 1st
       ];
 
       nonJanuaryFirstDates.forEach((date) => {
@@ -57,12 +60,14 @@ describe('Schedule Functions', () => {
         expect(result).to.be.undefined;
       });
 
-      const januaryFirstDate = new Date().setFullYear(currentYear, 0, 1);
+      const januaryFirstDate = moment()
+        .set({ year: currentYear, month: 0, date: 1 })
+        .valueOf(); // January 1st
       Date.now = () => januaryFirstDate;
 
       // @ts-ignore
       const result = applyAnnualIncrease({ policy: policyOlderThanYear });
-      
+
       expect(result).to.not.be.undefined;
       expect(result).to.deep.equal([
         {
