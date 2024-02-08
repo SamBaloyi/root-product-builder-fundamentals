@@ -1,3 +1,7 @@
+/**
+ * HELPERS FOR QUOTES
+ */
+
 const quoteDataValid = {
   start_date: moment().add(20, 'days').toDate(), // 20 days from now
   cover_amount: 90000 * 100, // R90,000.00
@@ -26,12 +30,15 @@ const quoteDataBrachiosaurus = {
   health_checks_updated: true,
 };
 
+/**
+ * HELPERS FOR APPLICATION
+ */
 
 const applicationValid = {
-  dinosaur_name: "Sam Dino",
-  dinosaur_colour: "Sea Green",
-  ndrn: "100001"
-}
+  dinosaur_name: 'Sam Dino',
+  dinosaur_colour: 'Sea Green',
+  ndrn: '100001',
+};
 
 generatePolicyNumber = () => {
   return '8CE463A4A6';
