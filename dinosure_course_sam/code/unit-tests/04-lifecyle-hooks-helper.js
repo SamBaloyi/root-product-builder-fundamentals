@@ -9,7 +9,7 @@ const lapsedPolicy = {
   sum_assured: 9000000, // R90,000
   base_premium: 145800,
   monthly_premium: 145800,
-  start_date: '2023-12-06T09:47:52Z',
+  start_date: moment().add(2, 'days').startOf('day'),
   end_date: null,
   module: {
     type: 'dinosure_course_sam',
@@ -30,7 +30,7 @@ const cancelledPolicy = {
   sum_assured: 9000000, // R90,000
   base_premium: 145800,
   monthly_premium: 145800,
-  start_date: '2023-12-06T09:47:52Z',
+  start_date: moment().add(2, 'days').startOf('day'),
   end_date: null,
   module: {
     type: 'dinosure_course_sam',
@@ -51,7 +51,7 @@ const expiredPolicy = {
   sum_assured: 9000000, // R90,000
   base_premium: 145800,
   monthly_premium: 145800,
-  start_date: '2023-12-06T09:47:52Z',
+  start_date: moment().add(2, 'days').startOf('day'),
   end_date: null,
   module: {
     type: 'dinosure_course_sam',
