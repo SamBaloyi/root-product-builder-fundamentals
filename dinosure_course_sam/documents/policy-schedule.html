@@ -5,7 +5,8 @@
     <!-- < linkrel="stylesheet" href="https://fonts.googleapis.com/css?family=Calibri"> -->
     <style type="text/css">
       body {
-        font-family: 'Lato-Regular', avenir, Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+        font-family: 'Lato-Regular', avenir, Calibri, Candara, Segoe, 'Segoe UI',
+          Optima, Arial, sans-serif;
         font-size: 10px;
       }
 
@@ -245,10 +246,14 @@
 
       <h1><strong>POLICY SCHEDULE</strong></h1>
 
-      <div class="padded" style="padding-top: 0px; margin-bottom: 0; padding-bottom: 0">
+      <div
+        class="padded"
+        style="padding-top: 0px; margin-bottom: 0; padding-bottom: 0"
+      >
         <p>
-          Before humans there lived on this earth tyrannosaurus, velociraptor and more. Predator and herbivores alike
-          including the spinosaurus, brachiosaurus, oviraptor and allosaurus.
+          Before humans there lived on this earth tyrannosaurus, velociraptor
+          and more. Predator and herbivores alike including the spinosaurus,
+          brachiosaurus, oviraptor and allosaurus.
         </p>
 
         <p><strong>TERM LIFE COVER</strong></p>
@@ -276,48 +281,44 @@
         </div>
         <div class="one-three-split">
           <div>Sum assured</div>
-          <div>{{formatCurrency policy.sum_assured policy.currency locale="en-GB"}}</div>
+          <div>{{zarString policy.sum_assured }}</div>
         </div>
         <div class="one-three-split">
           <div>Monthly premium</div>
-          <div>{{formatCurrency policy.monthly_premium policy.currency locale="en-GB"}}</div>
+          <div>{{zarString policy.monthly_premium}}</div>
         </div>
         <div class="one-three-split">
           <div>Payment frequency</div>
-          <div>Monthly on the {{ ordinalString policy.billing_day }} day of the month</div>
+          <div>
+            Monthly on the {{ ordinalString policy.billing_day }} day of the
+            month
+          </div>
         </div>
         <br /><br />
 
-        <p><strong>PREMIUM BREAKDOWN</strong></p>
+        <p><strong>DINOSAUR INFORMATION</strong></p>
 
         <div class="one-three-split">
-          <div>Risk premium</div>
-          <div>{{formatCurrency policy.module.premium_breakdown.risk_premium policy.currency locale="en-GB"}}</div>
+          <div>Dinosaur name</div>
+          <div>{{ policy.module.dinosaur_name }}</div>
         </div>
         <div class="one-three-split">
-          <div>EWN benefit</div>
-          <div>
-            {{#if policy.module.early_warning_network_benefit "===" true}}{{formatCurrency
-            policy.module.premium_breakdown.early_warning_network_benefit_premium policy.currency
-            locale="en-GB"}}{{else}}N/A{{/if}}
-          </div>
+          <div>Dinosaur species</div>
+          <div>{{ policy.module.species }}</div>
         </div>
         <div class="one-three-split">
-          <div>Extraction benefit</div>
-          <div>
-            {{#if policy.module.extraction_benefit "===" true}}{{formatCurrency
-            policy.module.premium_breakdown.extraction_benefit_premium policy.currency
-            locale="en-GB"}}{{else}}N/A{{/if}}
-          </div>
+          <div>Dinosaur NDRN</div>
+          <div>{{ policy.module.ndrn }}</div>
         </div>
         <br /><br />
 
         <p><strong>CLAIMS PROCESS</strong></p>
 
         <p style="line-height: 16px">
-          Please make sure that you submit your claim in writing within 90 days from the date of the occurrence of any
-          event that could result in a claim against this policy. You can lodge a claim on our website or by calling us
-          on 001-337-1337.
+          Please make sure that you submit your claim in writing within 90 days
+          from the date of the occurrence of any event that could result in a
+          claim against this policy. You can lodge a claim on our website or by
+          calling us on 001-337-1337.
         </p>
       </div>
       <div class="footer">
@@ -326,8 +327,10 @@
           src="https://storage.googleapis.com/root-production-public-client-images/Dinosure%20Demo/isla-nubar-footer.png"
         />
         <div class="omart">
-          Dinosure is a demo application by Root. The app source code is open- sourced and MIT licensed. Dinosure is an
-          unauthorised financial services provider. FSP number 13371337. 3 Sauropoda Lane, Isla Nublar, 4242
+          Dinosure is a demo application by Root. The app source code is open-
+          sourced and MIT licensed. Dinosure is an unauthorised financial
+          services provider. FSP number 13371337. 3 Sauropoda Lane, Isla Nublar,
+          4242
         </div>
       </div>
     </div>
