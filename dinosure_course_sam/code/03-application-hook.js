@@ -3,6 +3,33 @@
  */
 
 /**
+ * Schema for creating an application
+ */
+const applicationSchema = Joi.object().keys({
+  dinosaur_name: Joi.string()
+    .max(100)
+    .required()
+    .description(
+      'The name of the dinosaur must be provided and must be less than 100 characters.',
+    ),
+  dinosaur_colour: Joi.string()
+    .valid('lilac', 'sea green', 'granite grey', 'midnight blue')
+    .insensitive()
+    .required()
+    .description(
+      'The colour of the dinosaur must be one of the following: Lilac, Sea Green, Granite Grey, Midnight Blue.',
+    ),
+  ndrn: Joi.string()
+    .regex(/^\d{6}$/)
+    .required()
+    .min(6)
+    .max(6)
+    .description(
+      'The National Dinosaur Registry Number (NDRN) must be provided and should be a number between 100,000 and 999,999.',
+    ),
+});
+
+/**
  * Validates the application request data.
  * @param {Record<string, any>} data The data received in the body of the
  *     [Create an application](https://docs.rootplatform.com/reference/getting-a-quote-2) request
@@ -15,33 +42,7 @@
  */
 const validateApplicationRequest = (data, policyholder, quote_package) => {
   // Custom validation can be specified in the function body
-  const result = Joi.validate(
-    data,
-    Joi.object().keys({
-      dinosaur_name: Joi.string()
-        .max(100)
-        .required()
-        .description(
-          'The name of the dinosaur must be provided and must be less than 100 characters.',
-        ),
-      dinosaur_colour: Joi.string()
-        .valid('lilac', 'sea green', 'granite grey', 'midnight blue')
-        .insensitive()
-        .required()
-        .description(
-          'The colour of the dinosaur must be one of the following: Lilac, Sea Green, Granite Grey, Midnight Blue.',
-        ),
-      ndrn: Joi.string()
-        .regex(/^\d{6}$/)
-        .required()
-        .min(6)
-        .max(6)
-        .description(
-          'The National Dinosaur Registry Number (NDRN) must be provided and should be a number between 100,000 and 999,999.',
-        ),
-    }),
-    { abortEarly: false },
-  );
+  const result = Joi.validate(data, applicationSchema, { abortEarly: false });
   return result;
 };
 
